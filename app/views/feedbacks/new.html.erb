@@ -1,0 +1,6 @@
+<%= form_for :feedback, url: feedbacks_path do |f| %>
+  Name: <%= f.text_field :name %><br />
+  Email: <%= f.text_field :email %><br />
+  Message : <%= f.text_area :body %><br />
+  <%= f.submit %>
+<% end %>
