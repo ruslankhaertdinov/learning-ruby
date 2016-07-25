@@ -4,11 +4,10 @@ class FeedbacksController < ApplicationController
   end
 
   def create
-    byebug
     @feedback = Feedback.new(feedback_params)
 
     if @feedback.valid?
-      puts "Valid!!!!!!!"
+      redirect_to root_path, notice: "Сообщение успешно отправлено."
     else
       render :new
     end

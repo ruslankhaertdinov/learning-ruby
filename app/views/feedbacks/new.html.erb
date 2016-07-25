@@ -1,4 +1,15 @@
+<p>
+  <%= flash[:notice] %>
+</p>
+
 <%= form_for :feedback, url: feedbacks_path do |f| %>
+  <% if @feedback.errors.to_a.any? %>
+    <% @feedback.errors.to_a.each do |error_message| %>
+      <%= error_message %>
+      <br />
+    <% end %>
+  <% end %>
+
   Name: <%= f.text_field :name %><br />
   Email: <%= f.text_field :email %><br />
   Message : <%= f.text_area :body %><br />
