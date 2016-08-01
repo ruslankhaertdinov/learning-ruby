@@ -1,7 +1,7 @@
 class Feedback
   include ActiveModel::Validations
 
-  ATTRIBUTES = %i(name email body)
+  ATTRIBUTES = %i(name email body).freeze
   EMAIL_FORMAT = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   attr_reader(*ATTRIBUTES)
